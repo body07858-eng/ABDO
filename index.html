@@ -3,78 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heart Link 💖</title>
+    <title>مفاجأة ليك 💖</title>
     <style>
-        body { 
-            background: #000; 
-            color: #fff; 
-            text-align: center; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            background: #111;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 0 20px rgba(255, 0, 100, 0.2);
-            border: 1px solid #333;
-        }
-        input { 
-            padding: 12px; 
-            border-radius: 10px; 
-            border: 1px solid #ff0066; 
-            background: #222; 
-            color: #fff;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-        button { 
-            padding: 10px 25px; 
-            border-radius: 10px; 
-            border: none; 
-            background: #ff0066; 
-            color: white; 
-            cursor: pointer;
-            font-weight: bold;
-        }
-        #content { display:none; margin-top: 30px; }
+        body { background: #000; color: #fff; text-align: center; font-family: Arial; padding: 20px; }
+        .container { max-width: 450px; margin: auto; background: #111; padding: 20px; border-radius: 20px; border: 1px solid #ff0066; }
+        #main-content, #gallery, #final { display: none; }
+        video, img { width: 100%; border-radius: 15px; margin-top: 15px; border: 1px solid #333; }
+        button { background: #ff0066; color: #fff; border: none; padding: 15px; border-radius: 12px; cursor: pointer; font-weight: bold; margin-top: 20px; width: 100%; font-size: 16px; }
+        input { padding: 12px; border-radius: 10px; width: 80%; margin-bottom: 10px; text-align: center; }
+        .text-box { background: #222; padding: 15px; border-radius: 15px; margin-top: 15px; color: #ccc; line-height: 1.6; }
         h1 { color: #ff0066; }
     </style>
 </head>
 <body>
 
-    <div class="container" id="login-box">
-        <h2>💌 ادخل كلمة السر</h2>
-        <input type="password" id="pass" placeholder="اكتب الباسورد هنا...">
-        <br>
-        <button onclick="check()">افتح 💖</button>
+    <div class="container" id="login">
+        <h2>🔒 اكتب الباسورد</h2>
+        <input type="password" id="pass" placeholder="الباسورد المعتاد...">
+        <button onclick="login()">دخول 💖</button>
     </div>
 
-    <div id="content">
-        <h1>💖 Happy Valentine 💖</h1>
-        <p style="font-size: 1.2rem;">أنت شخص مميز جداً ❤️</p>
-        <audio id="myAudio">
-            <source src="song.mp3" type="audio/mpeg">
-        </audio>
+    <div class="container" id="main-content">
+        <h1>هديتي ليك 🎁</h1>
+        
+        <video controls id="vid">
+            <source src="video.mp4" type="video/mp4">
+            متصفحك لا يدعم الفيديو
+        </video>
+
+        <div class="text-box">
+            <p>هنا تكتب الكلام اللي إنت عايزه.. مثلاً: "كل سنة وإنت طيب يا أغلى حد في حياتي، حبيت أعملك حاجة مختلفة النهاردة.."</p>
+        </div>
+
+        <button onclick="showGallery()">دوس هنا عشان تشوف الصور 📸</button>
+
+        <div id="gallery">
+            <img src="photo1.jpg">
+            <img src="photo2.jpg">
+            <img src="photo3.jpg">
+            
+            <button onclick="showFinal()">دوس هنا لآخر حاجة 🎀</button>
+        </div>
+
+        <div id="final" style="margin-top: 30px;">
+            <h1 style="font-size: 3rem; animation: pulse 1s infinite;">💖 بـحـبـك 💖</h1>
+        </div>
     </div>
 
     <script>
-        function check() {
-            let p = document.getElementById("pass").value;
-            // كلمة السر هي 14-2 زي ما كانت في صورتك
-            if(p === "2006") { 
-                document.getElementById("login-box").style.display = "none";
-                document.getElementById("content").style.display = "block";
-                // تشغيل الصوت لو الملف موجود
-                document.getElementById("myAudio").play();
-            } else {
-                alert("❌ كلمة سر خطأ.. حاول تاني يا حب");
-            }
+        function login() {
+            if(document.getElementById("pass").value === "2006") {
+                document.getElementById("login").style.display = "none";
+                document.getElementById("main-content").style.display = "block";
+            } else { alert("الباسورد غلط!"); }
+        }
+        function showGallery() {
+            document.getElementById("gallery").style.display = "block";
+        }
+        function showFinal() {
+            document.getElementById("final").style.display = "block";
         }
     </script>
 </body>
