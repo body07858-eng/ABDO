@@ -12,41 +12,38 @@
         button { background: #ff0066; color: #fff; border: none; padding: 15px; border-radius: 12px; cursor: pointer; font-weight: bold; margin-top: 20px; width: 100%; font-size: 16px; }
         input { padding: 12px; border-radius: 10px; width: 80%; margin-bottom: 10px; text-align: center; }
         .text-box { background: #222; padding: 15px; border-radius: 15px; margin-top: 15px; color: #ccc; line-height: 1.6; }
-        h1 { color: #ff0066; }
     </style>
 </head>
 <body>
 
     <div class="container" id="login">
         <h2>🔒 اكتب الباسورد</h2>
-        <input type="password" id="pass" placeholder="الباسورد المعتاد...">
+        <input type="password" id="pass" placeholder="2006">
         <button onclick="login()">دخول 💖</button>
     </div>
 
     <div class="container" id="main-content">
         <h1>هديتي ليك 🎁</h1>
         
-        <video controls id="vid">
-            <source src="video.mp4" type="video/mp4">
-            متصفحك لا يدعم الفيديو
+        <video controls>
+            <source src="WhatsApp Video 2026-02-03 at 6.45.36 AM.mp4" type="video/mp4">
         </video>
 
         <div class="text-box">
-            <p>هنا تكتب الكلام اللي إنت عايزه.. مثلاً: "كل سنة وإنت طيب يا أغلى حد في حياتي، حبيت أعملك حاجة مختلفة النهاردة.."</p>
+            <p>كل سنة وإنت طيب يا أغلى حد في حياتي، حبيت أعملك حاجة مختلفة النهاردة.. ❤️</p>
         </div>
 
         <button onclick="showGallery()">دوس هنا عشان تشوف الصور 📸</button>
 
         <div id="gallery">
-            <img src="photo1.jpg">
-            <img src="photo2.jpg">
-            <img src="photo3.jpg">
+            <img src="WhatsApp Image 2026-02-03 at 6.45.35 AM (1).jpeg">
+            <img src="WhatsApp Image 2026-02-03 at 6.45.35 AM.jpeg">
             
             <button onclick="showFinal()">دوس هنا لآخر حاجة 🎀</button>
         </div>
 
         <div id="final" style="margin-top: 30px;">
-            <h1 style="font-size: 3rem; animation: pulse 1s infinite;">💖 بـحـبـك 💖</h1>
+            <h1 style="font-size: 3rem;">💖 بـحـبـك 💖</h1>
         </div>
     </div>
 
@@ -57,12 +54,8 @@
                 document.getElementById("main-content").style.display = "block";
             } else { alert("الباسورد غلط!"); }
         }
-        function showGallery() {
-            document.getElementById("gallery").style.display = "block";
-        }
-        function showFinal() {
-            document.getElementById("final").style.display = "block";
-        }
+        function showGallery() { document.getElementById("gallery").style.display = "block"; }
+        function showFinal() { document.getElementById("final").style.display = "block"; }
     </script>
 </body>
 </html>
